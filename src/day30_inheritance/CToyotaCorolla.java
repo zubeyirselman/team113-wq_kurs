@@ -1,0 +1,34 @@
+package day30_inheritance;
+
+public class CToyotaCorolla extends BToyota{
+
+    String lastik = "Lassa 205-55-15";
+    String model = "Corolla";
+    String yakit = "Corolla dizel, beninli ve elektrikli olabilir.";
+
+
+public void motor(){
+    System.out.println("Corolla araclar turkiyede uretilen motor kullanir.");
+}
+
+public void uretimYeri(){
+    System.out.println("Corolla araclar turkiyede uretilir.");
+}
+
+public static void main(String[] args) {
+
+    CToyotaCorolla corolla = new CToyotaCorolla();
+    System.out.println(corolla.lastik); // Lassa 205-55-15
+    System.out.println(corolla.model); // Corolla
+    System.out.println(corolla.yakit); // Corolla dizel, beninli ve elektrikli olabilir.
+    corolla.motor(); // Corolla araclar turkiyede uretilen motor kullanir.
+    corolla.uretimYeri(); // Corolla araclar turkiyede uretilir.
+
+    System.out.println(corolla.marka); // toyota ==> parent class' dan aldi
+    System.out.println(corolla.aku); // Inci aku ==> parent class' dan aldi
+    corolla.guvenlik(); // toyota araclar extra guvenlik onlemleri barindirir. ==> parent class' dan aldi
+
+    System.out.println(corolla.vites); // tum arabalarin vitesi olur. ==>grandParent' dan aldi
+
+}
+}
