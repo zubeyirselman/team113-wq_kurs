@@ -13,6 +13,7 @@ public class c08_sort_binarySearch {
         Arrays.sort(arr1);
 
         System.out.println(Arrays.toString(arr1)); // [1, 3, 6, 7, 9]
+        System.out.println(Arrays.binarySearch(arr1,7));
 
         String[] arr2 = {"Hasan","Huseyin","Mehmet","Mesut","Mercan","ali"};
 
@@ -22,7 +23,7 @@ public class c08_sort_binarySearch {
         // sort yapildiktan sonra
         // array' de bir elementin var oldugunu kontrol etmek icin
 
-        System.out.println(Arrays.binarySearch(arr2, "ali")); // 
+        System.out.println(Arrays.binarySearch(arr2, "ali")); //
 
 
     }

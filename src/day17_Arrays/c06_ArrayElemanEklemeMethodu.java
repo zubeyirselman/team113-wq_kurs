@@ -15,6 +15,9 @@ public class c06_ArrayElemanEklemeMethodu {
 
         System.out.println(Arrays.toString(arr)); // [2, 4, 7, 8, 5]
 
+        System.out.println(Arrays.toString(arrayeElementEkleMethodu(arr, 45)));
+
+
     }
 
 

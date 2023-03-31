@@ -26,12 +26,7 @@ public class c07_kullanicidanDegerAlarakArrayOlustur {
 
                 arr = c06_ArrayElemanEklemeMethodu.arrayeElementEkleMethodu(arr,girilenSayi);
             }
-
         }
-
-
         System.out.println(Arrays.toString(arr));
-
-
     }
 }

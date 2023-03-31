@@ -16,6 +16,8 @@ public class c02_ArraydeIstenenElemaniBulma {
         elemanSayisiYazdir(arr2, "E"); // 2
 
 
+
+
     }
 
     public static void elemanSayisiYazdir(int[] arr, int arananElement) {

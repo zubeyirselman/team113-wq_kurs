@@ -6,7 +6,7 @@ public class c03_EnUzunElementiYazdirma {
         // Soru 6- Verilen String bir array’deki
         // en uzun ve en kisa kelimeleri yazdiran bir method olusturun.
 
-        String[] arr1 = {"Melike", "Burkay", "inci", "Eda", "Emre"};
+        String[] arr1 = {"Melike",  "Burkay", "inci", "Eda", "Emre"};
         enUzunEnKisaYazdir(arr1); // melike, eda
 
 
