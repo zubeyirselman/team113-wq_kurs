@@ -3,6 +3,7 @@ package day39_maps;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MapMethodDepo {
 
@@ -42,5 +43,78 @@ public class MapMethodDepo {
                 siraNo++;
             }
         }
+    }
+
+    public static Map<Integer, String> topluSubeDegistirme(Map<Integer, String> okulMap, String eskiSube, String yeniSube) {
+        // 1- once key' leri bir set olarak kaydedelim
+                Set<Integer> okulKeySeti = okulMap.keySet(); // [101, 102, 103, 104, 105, 106]
+
+        for (Integer eachKey:okulKeySeti
+             ) {
+            // 2- her bir key' e ait value' yu split ile array' e donusturelim
+            String[] valueArr = okulMap.get(eachKey).split("-"); // [Ali, Cem, 10, H, MF]
+
+            // 3- sube bilgisi eskiSube olanlari yeniSube yapalim
+            if (valueArr[3].equalsIgnoreCase(eskiSube)){
+                valueArr[3] = yeniSube; // [Ali, Cem, 10, H, MF]
+            }
+
+            // 4- array' deki bilgileri birlestirerek yeniden map' e ekleyelim
+            // Ali-Cem-10-H-MF
+
+            String yeniValue = "";
+            for (int i = 0; i < valueArr.length-1 ; i++) {
+                yeniValue += valueArr[i] + "-";
+            }
+
+            yeniValue += valueArr[valueArr.length-1];
+
+            okulMap.put(eachKey, yeniValue);
+        }
+
+        // 5- okulMap' inin son halini return edelim
+
+        return okulMap;
+    }
+
+    public static Map<Integer, String> yilSonuSiniflariDegistir(Map<Integer, String> okulMap) {
+
+        // 1- key' leri bir set olarak kaydedelim
+        Set<Integer> keySeti = okulMap.keySet();
+
+        // 2- set' teki her bir key' e ait value' yu for-each loop' la ele alalim
+        for (Integer eachKey:keySeti
+             ) {
+
+            // 3- her key' e ait value' yu split ile ayirip array olarak kaydedelim
+            String[] valueArr = okulMap.get(eachKey).split("-");
+
+            // 4- array olarak kaydettigimiz bilgilerde istenen update' i yapalim
+            if (valueArr[2].equalsIgnoreCase("12")){
+                valueArr[2] = "Mezun";
+            }else { // "9" "10" "11"
+
+                int sinif = Integer.parseInt(valueArr[2]);
+                sinif++;
+
+                valueArr[2] = sinif + "";
+
+            }
+
+            // 5- array' in yeni halini String olarak birlestirip yeniValue elde edelim
+            String yeniValue = "";
+            for (int i = 0; i < valueArr.length-1 ; i++) {
+                yeniValue += valueArr[i] + "-";
+            }
+
+            yeniValue += valueArr[valueArr.length-1];
+
+            // 6- her bir key ve yeniValue' yu map' e ekleyerek map' i update edelim
+
+            okulMap.put(eachKey,yeniValue);
+        }
+
+        // 7- map' in yeni halini return edelim
+        return okulMap;
     }
 }

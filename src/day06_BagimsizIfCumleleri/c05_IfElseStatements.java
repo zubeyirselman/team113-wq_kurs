@@ -2,7 +2,7 @@ package day06_BagimsizIfCumleleri;
 
 import java.util.Scanner;
 
-public class C05_IfElseStatements {
+public class c05_IfElseStatements {
     public static void main(String[] args) {
 
         /*
