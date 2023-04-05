@@ -1,12 +1,11 @@
-package day39_maps;
+package day39_TEKRAR;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MapMethodDepo {
-
-    public static Map<Integer,String> ornekMapOlustur(){
+    public static Map<Integer, String> ornekMapOlustur(){
 
         Map<Integer, String> okulMap = new HashMap<>();
 
@@ -20,12 +19,14 @@ public class MapMethodDepo {
         return okulMap;
     }
 
+
     public static void subeOgrenciListesiYazdir(Map<Integer, String> okulMap, String istenenSube) {
+
         // 1- value' lari ayri bir collection olarak kaydedelim,
                 Collection<String> valueCollection = okulMap.values();
 
-        // 2- her bir value' yu split ile bir array' e donusturelim
-        System.out.println("=======Sube listesi=======");
+        // 2- her bir value' yu split ile bir array' e donusturelim,
+        System.out.println("======= Sube Listesi =======");
         System.out.println("Sira  Sinif  Isim  Soyisim");
         int siraNo = 1;
 
@@ -36,10 +37,9 @@ public class MapMethodDepo {
 
             // 3- array' den sube' yi kontrol edip
             // eger istenen sube ise ogrencinin sinif isim ve soyismini yazdiralim
-
             if (valueArr[3].equalsIgnoreCase(istenenSube)){
-                System.out.println(siraNo + " - " + valueArr[2] + ", " + valueArr[0] + ", " + valueArr[1]);
-                siraNo++;
+                System.out.println(siraNo + " - " +valueArr[2] + ", " + valueArr[0] + ", " + valueArr[1]);
+            siraNo++;
             }
         }
     }
